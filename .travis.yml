@@ -4,4 +4,8 @@ services:
   - docker
 
 script:
-  - docker build .
+  - docker build -t rsyslog-stdout .
+  - docker run -d --rm --name syslog rsyslog-stdout
+  - docker run --link syslog:syslog --rm busybox sh -c 'echo hello | nc -u -w1 syslog 514'
+  - docker logs --tail 1 syslog | grep hello
+  - docker rm -f syslog
