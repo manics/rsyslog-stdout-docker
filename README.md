@@ -1,4 +1,5 @@
 # Rsyslog Docker image that logs to stdout
+[![Build Status](https://travis-ci.com/manics/rsyslog-stdout-docker.svg?branch=master)](https://travis-ci.com/manics/rsyslog-stdout-docker)
 
 A small rsyslog Docker image based on Alpine Linux.
 
